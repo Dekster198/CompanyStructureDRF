@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Employee(models.Model):
     fio = models.CharField(max_length=255, blank=False, db_index=True, unique=True, verbose_name='ФИО')
-    photo = models.ImageField(upload_to='photos/', blank=False, verbose_name='Фото')
+    photo = models.ImageField(upload_to='photos/', default='photos/default_photo.jpg', verbose_name='Фото')
     post = models.CharField(max_length=64, blank=False, verbose_name='Должность')
     salary = models.IntegerField(blank=False, verbose_name='Зарплата')
     age = models.IntegerField(blank=False, verbose_name='Возраст')
